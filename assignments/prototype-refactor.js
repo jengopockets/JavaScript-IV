@@ -7,22 +7,6 @@ Prototype Refactor
 2. Your goal is to refactor all of this code to use ES6 Classes. The console.log() statements should still return what is expected of them.
 
 */
-/*
-  === GameObject ===
-  * createdAt
-  * name
-  * dimensions (These represent the character's size in the video game)
-  * destroy() // prototype method that returns: `${this.name} was removed from the game.`
-*/
-// function GameObject(attributes) {
-    // this.createdAt = attributes.createdAt;
-    // this.name = attributes.name;
-    // this.dimensions = attributes.dimensions;
-// }
-
-// GameObject.prototype.destroy = function () {
-//     return `${this.name} was removed from the game.`
-// }
 class GameObject {
     constructor(attributes) {
         this.createdAt = attributes.createdAt;
@@ -53,60 +37,6 @@ class Humanoid extends CharacterStats {
         return `${this.name} offers a greeting in ${this.language}.`
     }
 }
-
-/*
-  === CharacterStats ===
-  * healthPoints
-  * takeDamage() // prototype method -> returns the string '<object name> took damage.'
-  * should inherit destroy() from GameObject's prototype
-*/
-// function CharacterStats(attributes) {
-//     this.healthPoints = attributes.healthPoints;
-//     GameObject.call(this, attributes);
-
-// }
-// CharacterStats.prototype = Object.create(GameObject.prototype);
-
-// CharacterStats.prototype.takeDamage = function () {
-//     return `${this.name} took damage.`
-// }
-
-
-
-
-
-
-
-/*
-  === Humanoid (Having an appearance or character resembling that of a human.) ===
-  * team
-  * weapons
-  * language
-  * greet() // prototype method -> returns the string '<object name> offers a greeting in <object language>.'
-  * should inherit destroy() from GameObject through CharacterStats
-  * should inherit takeDamage() from CharacterStats
-*/
-// function Humanoid(attributes) {
-//     this.team = attributes.team;
-//     this.weapons = attributes.weapons;
-//     this.language = attributes.language;
-//     CharacterStats.call(this, attributes);
-
-// }
-// Humanoid.prototype = Object.create(CharacterStats.prototype);
-
-// Humanoid.prototype.greet = function () {
-//     return `${this.name} offers a greeting in ${this.language}`
-// }
-
-
-/*
- * Inheritance chain: GameObject -> CharacterStats -> Humanoid
- * Instances of Humanoid should have all of the same properties as CharacterStats and GameObject.
- * Instances of CharacterStats should have all of the same properties as GameObject.
- */
-
-// Test you work by un-commenting these 3 objects and the list of console logs below:
 
 
 const mage = new Humanoid({
