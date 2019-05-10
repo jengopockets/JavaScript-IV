@@ -22,8 +22,8 @@ class Instructor extends Person {
     demo(subject) {
         return `Today we are learning about ${this.subject}`
     }
-    grade() {
-        return `${Student.name} recieves a perfect score on ${subject}.`;
+    grade(Student) {
+        return `${Student.name} recieves a perfect score on ${this.subject}.`;
     }
 }
 class Student extends Person {
@@ -62,7 +62,23 @@ const fred = new Instructor({
     gender: 'male',
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
-    catchPhrase: `Don't forget the homies`
+    catchPhrase: `Don't forget the homies`,
+    subject : `Science`
   });
-  fred.speak();
-  console.log();
+  const billy = new Student({
+      name: 'Billy Bob Thortain',
+      location: 'The Hills',
+      age: 4,
+      gender: 'male',
+      className: 'Unibrows',
+      favSubjects: {
+        History: 100,
+        Math: 100,
+        Naptime: 100,
+    },
+      
+  });
+  
+  console.log(fred.speak());
+  console.log (fred.demo());
+  console.log(fred.grade(billy));
