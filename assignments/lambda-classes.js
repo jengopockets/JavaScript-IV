@@ -1,4 +1,5 @@
 // CODE here for your Lambda Classes
+"use strict"
 class Person {
     constructor(stat){
         this.name = stat.name;
@@ -51,6 +52,17 @@ class ProjectManager extends Instructor {
 
     }
     debugsCode() {
-        
+
     }
 }
+const fred = new Instructor({
+    name: 'Fred',
+    location: 'Bedrock',
+    age: 37,
+    gender: 'male',
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
+  });
+  fred.speak();
+  console.log();
