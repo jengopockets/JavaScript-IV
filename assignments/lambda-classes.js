@@ -63,7 +63,27 @@ const fred = new Instructor({
     favLanguage: 'JavaScript',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`,
-    subject : `Science`
+    subject: `Science`
+  });
+  const joe = new Instructor({
+    name: 'Joe',
+    location: 'Your Moms House',
+    age: 29,
+    gender: 'male',
+    favLanguage: 'Python',
+    specialty: 'Back-end',
+    catchPhrase: `I forgot`,
+    subject: `Math`
+  });
+  const kyile = new Instructor({
+    name: 'kyile',
+    location: 'Grub',
+    age: 24,
+    gender: 'female',
+    favLanguage: 'Java',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`,
+    subject: `Hystory`
   });
   const billy = new Student({
       name: 'Billy Bob Thortain',
@@ -71,13 +91,69 @@ const fred = new Instructor({
       age: 4,
       gender: 'male',
       className: 'Unibrows',
-      favSubjects: {
-        History: 100,
-        Math: 100,
-        Naptime: 100,
-    },
-      
+      favSubjects:[ 
+        'History',
+        'Math',
+        'Naptime'
+      ]
   });
+  const silly = new Student({
+    name: 'Silly Bob Thortain',
+    location: 'The Hills',
+    age: 4,
+    gender: 'male',
+    className: 'Unibrows',
+    favSubjects:[ 
+      'History',
+      'Math',
+      'Naptime'
+    ]
+});
+const shrilly = new Student({
+    name: 'Shrilly Bob Thortain',
+    location: 'The Hills',
+    age: 4,
+    gender: 'female',
+    className: 'Unibrows',
+    favSubjects:[ 
+      'History',
+      'Math',
+      'Naptime'
+    ]
+});
+const kyle = new ProjectManager({
+    name: 'Kyle',
+    location: 'Grub',
+    age: 24,
+    gender: 'female',
+    favLanguage: 'Java',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`,
+    subject: `Hystory`
+  });
+  const penelope = new ProjectManager({
+    name: 'Penelope',
+    location: 'Grub',
+    age: 24,
+    gender: 'female',
+    favLanguage: 'Java',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`,
+    subject: `Math`
+  });
+  const hailey = new ProjectManager({
+    name: 'Hailey',
+    location: 'Grub',
+    age: 24,
+    gender: 'female',
+    favLanguage: 'Java',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`,
+    subject: `Science`
+  });
+
+    
+
   
   console.log(fred.speak());
   console.log (fred.demo());
