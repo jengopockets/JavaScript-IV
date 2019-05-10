@@ -18,8 +18,11 @@ class Instructor extends Person {
         this.catchPhrase = stat .catchPhrase;
         this.subject = stat.subject;
     }
-    demo() {
-        console.log(`Today we are learning about ${this.subject}`)
+    demo(subject) {
+        return `Today we are learning about ${this.subject}`
+    }
+    grade() {
+        return `${Student.name} recieves a perfect score on ${subject}.`;
     }
 }
 class Student extends Person {
