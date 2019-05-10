@@ -20,10 +20,10 @@ class Instructor extends Person {
         this.subject = stat.subject;
     }
     demo(subject) {
-        return `Today we are learning about ${this.subject}`
+        return `Today we are learning about ${subject}`
     }
-    grade(Student) {
-        return `${Student.name} recieves a perfect score on ${this.subject}.`;
+    grade(Student,subject) {
+        return `${Student.name} recieves a perfect score on ${subject}.`;
     }
 }
 class Student extends Person {
@@ -33,12 +33,14 @@ class Student extends Person {
         this.favSubjects = stat.favSubjects;
     }
     listsSubjects() {
+        return `${this.favSubjects}`;
 
     }
-    PRAssignment() {
-
+    PRAssignment(subject) {
+        return `${this.name} has submitted a PR for ${subject}`;
     }
-    sprintChallenge() {
+    sprintChallenge(subject) {
+        return `${this.name} has begun sprint challenge on ${subject}`;
 
     }
 }
@@ -48,11 +50,11 @@ class ProjectManager extends Instructor {
         this.gradClassName = stat.gradClassName;
         this.favInstructors = stat.favInstructors;
     }
-    standUp() {
-
+    standUp(slackCh) {
+        return `${this.name} announces to ${slackCh}, @channel standy times!`;
     }
-    debugsCode() {
-
+    debugsCode(Student,subject) {
+        return `${this.name} debugs ${Student.name}'s code on ${subject}`
     }
 }
 const fred = new Instructor({
@@ -73,7 +75,6 @@ const fred = new Instructor({
     favLanguage: 'Python',
     specialty: 'Back-end',
     catchPhrase: `I forgot`,
-    subject: `Math`
   });
   const kyile = new Instructor({
     name: 'kyile',
@@ -83,7 +84,6 @@ const fred = new Instructor({
     favLanguage: 'Java',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`,
-    subject: `Hystory`
   });
   const billy = new Student({
       name: 'Billy Bob Thortain',
@@ -92,8 +92,8 @@ const fred = new Instructor({
       gender: 'male',
       className: 'Unibrows',
       favSubjects:[ 
-        'History',
-        'Math',
+        'History ',
+        'Math ',
         'Naptime'
       ]
   });
@@ -129,7 +129,8 @@ const kyle = new ProjectManager({
     favLanguage: 'Java',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`,
-    subject: `Hystory`
+    gradClassName: 'fedora',
+    favInstructors: 'kylie'
   });
   const penelope = new ProjectManager({
     name: 'Penelope',
@@ -139,7 +140,8 @@ const kyle = new ProjectManager({
     favLanguage: 'Java',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`,
-    subject: `Math`
+    gradClassName: 'fedora',
+    favInstructors: 'kylie'
   });
   const hailey = new ProjectManager({
     name: 'Hailey',
@@ -149,12 +151,18 @@ const kyle = new ProjectManager({
     favLanguage: 'Java',
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`,
-    subject: `Science`
+    gradClassName: 'fedora',
+    favInstructors: 'kylie'
   });
 
     
 
   
   console.log(fred.speak());
-  console.log (fred.demo());
-  console.log(fred.grade(billy));
+  console.log (fred.demo("Science"));
+  console.log(fred.grade(billy,"Math"));
+  console.log(billy.listsSubjects());
+  console.log(silly.PRAssignment("Math"));
+  console.log(shrilly.sprintChallenge("Science"))
+  console.log(hailey.standUp("thesbians"))
+  console.log(penelope.debugsCode(billy, "Maths"))
