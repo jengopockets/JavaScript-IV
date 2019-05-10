@@ -16,6 +16,7 @@ class Instructor extends Person {
         this.specialty = stat.specialty;
         this.favLanguage = stat.favLanguage;
         this.catchPhrase = stat .catchPhrase;
+        this.subject = stat.subject;
     }
     demo() {
         console.log(`Today we are learning about ${this.subject}`)
